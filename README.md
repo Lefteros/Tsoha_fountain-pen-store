@@ -6,3 +6,7 @@ Harjoitustyöni on mukautettu versio "kurssitarjonta ja kurssipaikan varaus"-esi
 Jos kynä on jo maksettu, ajatellaan sen lähtevn kaupasta välittömästi, joten kynän poistaminen kaupasta ei poista sitä asiakkaan omista ostoista. Jos kynä on kirjattuna asikkaan Ostoihin ja se on maksettu, voidaan se ajatella olevan osa asiakkaan kokoelmaa. Asiakas voi halutessaan tarkastella vain niitä kyniä, jotka ovat hnen omistuksessaan (piilottaa peruutetut ja maksamattomat kynät).
 
 Admin voi tarkkailla jokaisen asikkaa ostoja ja niiden statusta (peruutettu/aktiivinen, maksettu/maksamaton). Admin näkee myös ketkä kaikki käyttäjät ovat ostaneet tietyn kynän. 
+
+Linkki Herokuun: https://tsoha-foutain-pen-store.herokuapp.com/
+
+
