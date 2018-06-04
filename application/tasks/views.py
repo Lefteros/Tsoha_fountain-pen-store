@@ -1,4 +1,6 @@
 from flask import render_template, request, url_for, redirect
+from flask_login import login_required
+
 from application import app, db
 from application.tasks.models import Task
 from application.tasks.forms import TaskForm
