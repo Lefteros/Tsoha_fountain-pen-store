@@ -7,6 +7,7 @@ from application.tasks.forms import TaskForm
 
 
 @app.route("/tasks/new/")
+@login_required
 def tasks_form():
     return render_template("tasks/new.html", form = TaskForm())
 
