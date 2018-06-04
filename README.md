@@ -8,7 +8,7 @@ Jos kynä on jo maksettu, ajatellaan sen lähtevn kaupasta välittömästi, jote
 Admin voi tarkkailla jokaisen asikkaa ostoja ja niiden statusta (peruutettu/aktiivinen, maksettu/maksamaton). Admin näkee myös ketkä kaikki käyttäjät ovat ostaneet tietyn kynän. 
 
 [Tietokantakavio](/documentation/tietokantakaavio)  
-[User Stories](/documentation/user_stories)  
+[Käyttötapaukset](/documentation/kayttotapaukset)  
 [Linkki Herokuun](https://tsoha-foutain-pen-store.herokuapp.com/)
 
 
