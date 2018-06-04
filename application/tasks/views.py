@@ -1,7 +1,7 @@
 from flask import render_template, request, url_for, redirect
 from application import app, db
 from application.tasks.models import Task
-from applivation.tasks.forms import TaskForm
+from application.tasks.forms import TaskForm
 
 @app.route("/tasks", methods=["GET"])
 def tasks_index():
