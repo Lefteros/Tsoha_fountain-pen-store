@@ -1,6 +1,6 @@
-{% extends "layout.html" %}
-  
-{% block body %}
+  {% extends "layout.html" %}
+
+  {% block body %}
   <form method="POST" action="{{ url_for('tasks_create') }}">
     <table>
       <tr>
@@ -12,7 +12,7 @@
 	</td>
       </tr>
       <tr>
-        <td>
+	<td>
 	  {{ form.done.label }}
 	</td>
 	<td>
@@ -25,4 +25,4 @@
 	</td>
       </tr>
   </form>
-{% endblock %}
+  {% endblock %}
