@@ -1,5 +1,5 @@
-# Tsoha_repo
-Repositorio tiotokantasovellus harjoitustyötä varten.
+
+# Repositorio tiotokantasovellus harjoitustyötä varten.
 
 Harjoitustyöni on mukautettu versio "kurssitarjonta ja kurssipaikan varaus"-esimerkistä. Aiheeksi tulee siis "Fountain Pen Store", eli täytekynä kauppa. Järjestelmään voi kirjautua adminina jolloin kauppaan voi lisätä kyniä ja muokata niiden tietoja. Asiakkaana kirjautuva voi ostaa kyniä, jolloin hän saa ohjeet maksusta. Halutessaan hän voi pyytää laskua. Ostoista näkyy mitä kyniä käyttäjä on ostanut ja onko hän maksanut sen. Käyttäjä voi itse perua oston ja admin (kauppa) voi perus oston käyttäjän puolesta mikäli käyttäjä ei ole vielä maksanut kynää. Mikäli kynää ei makseta tietyn ajan kuluessa, saa hän automaattisesti laskun. Admin oi vapaasti muokata kynien tietoja sivulla ja myös poistaa kyniä järjestelmästä, jolloin osto automaattisesti peruutetaan kaikilta käyttäjiltä jotka eivät ole jo maksaneet.
 
@@ -7,6 +7,6 @@ Jos kynä on jo maksettu, ajatellaan sen lähtevn kaupasta välittömästi, jote
 
 Admin voi tarkkailla jokaisen asikkaa ostoja ja niiden statusta (peruutettu/aktiivinen, maksettu/maksamaton). Admin näkee myös ketkä kaikki käyttäjät ovat ostaneet tietyn kynän. 
 
-Linkki Herokuun: https://tsoha-foutain-pen-store.herokuapp.com/
+[Linkki Herokuun](https://tsoha-foutain-pen-store.herokuapp.com/)
 
 
