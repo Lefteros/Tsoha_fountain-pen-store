@@ -10,11 +10,13 @@ def tasks_form():
 
 
 @app.route("/tasks", methods=["GET"])
+@login_required
 def tasks_index():
     return render_template("tasks/list.html", tasks = Task.query.all())
 
 
 @app.route("/tasks/<task_id>/", methods=["POST"])
+@login_required
 def tasks_set_done(task_id):
 
     t = Task.query.get(task_id)
@@ -25,8 +27,15 @@ def tasks_set_done(task_id):
 
 
 @app.route("/tasks/", methods=["POST"])
+@login_required
 def tasks_create():
-    t = Task(request.form.get("name"))
+    form = TaskForm(request.form)
+
+    if not form.validate():
+        return render_template("tasks/new.html", form = form)
+
+    t = 	Task(form.name.data)
+    t.done = form.done.data
 
     db.session().add(t)
     db.session().commit()
