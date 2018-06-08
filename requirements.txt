@@ -1,4 +1,4 @@
-adium-theme-ubuntu==0.3.4
+
 alabaster==0.7.7
 apptools==4.3.0
 astroid==1.4.4
