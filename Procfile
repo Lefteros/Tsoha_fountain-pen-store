@@ -1,1 +1,1 @@
-web: gunicorn --preload --workers 1 application:app --preload --no-warn-script-location
+web: gunicorn --preload --workers 1 application:app --preload --system-site-packages
