@@ -3,7 +3,7 @@
 {% block body %}
   <table border="1">
     <tr>
-      <th>Pen</th>
+      <th>Model</th>
       <th>Country of Origin</th>
       <th>Manufacturer</th>
     </tr>
@@ -12,6 +12,7 @@
       <td>{{ pen.name }}</td>
       <td>{{ pen.country }}</td>
       <td>{{ pen.manufacturer }}</td>
+      <td><form method="POST" action="{{ url_for('pen_delete', pen_id=pen.id) }}"><button type="submit">Delete</button></form></td>
     </tr>
     {% endfor %}
   </table>

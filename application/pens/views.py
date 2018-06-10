@@ -11,6 +11,8 @@ from application.pens.forms import PenForm
 def pen_form():
     return render_template("pens/new.html", form = PenForm())
 
+    
+
 
 @app.route("/pens", methods=["GET"])
 @login_required
@@ -18,15 +20,6 @@ def pens_index():
     return render_template("pens/list.html", pen = Pen.query.all())
 
 
-#@app.route("/pens/<pen_id>/", methods=["POST"])
-#@login_required
-#def tasks_set_done(task_id):
-#
-#    t = Task.query.get(task_id)
-#    t.done = True
-#    db.session().commit()
-#  
-#    return redirect(url_for("tasks_index"))
 
 
 @app.route("/pens/", methods=["POST"])
@@ -42,6 +35,17 @@ def pen_create():
     t.manufacturer = form.manufacturer.data
 
     db.session().add(t)
+    db.session().commit()
+
+    return redirect(url_for("pens_index"))
+
+
+@app.route("/pens/delete/<pen_id>/", methods=["POST"])
+@login_required
+def pen_delete(pen_id):
+    t = Pen.query.get(pen_id)
+
+    db.session().delete(t)
     db.session().commit()
 
     return redirect(url_for("pens_index"))
