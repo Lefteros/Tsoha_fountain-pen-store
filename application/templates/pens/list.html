@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <table border="1">
+    <tr>
+      <th>Pen</th>
+      <th>Country of Origin</th>
+      <th>Manufacturer</th>
+    </tr>
+    {% for pen in pen %}
+    <tr>
+      <td>{{ pen.name }}</td>
+      <td>{{ pen.country }}</td>
+      <td>{{ pen.manufacturer }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
