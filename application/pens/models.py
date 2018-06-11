@@ -10,6 +10,10 @@ class Pen(db.Model):
     country = db.Column(db.String(144), nullable=False)
     manufacturer = db.Column(db.String(144), nullable=False)
 
+    collection = db.relationship("Collection", backref='pen', lazy=True)
+
     def __init__(self, name):
         self.name = name
-        self.done = False
+ 
+    def getId():
+        return self.id

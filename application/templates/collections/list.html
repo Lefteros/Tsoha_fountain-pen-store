@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h1>My Collection</h1>
+<table border="1">
+    <tr>
+      <th>Name</th>
+      <th>Nib</th>
+      <th>Color</th>
+    </tr>
+    {% for pen in collection %}
+    <tr>
+      <td>{{ pen.pen.name }}</td>
+      <td>{{ pen.nib }}</td>
+      <td>{{ pen.color }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <form method="POST" action="{{ url_for('collection_add') }}">
+    <table>
+      <tr>
+	<td>
+	  {{ form.pen.label }}
+	</td>
+	<td>
+	  {{ form.pen }}
+	</td>
+	<td>
+	  <ul>
+	    {% for error in form.pen.errors %}
+	    <li>{{ error }}</li>
+	    {% endfor %}
+	  </ul>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  {{ form.nib.label }}
+	</td>
+	<td>
+	  {{ form.nib }}
+	</td>
+	<td>
+	  <ul>
+	    {% for error in form.nib.errors %}
+	    <li>{{ error }}</li>
+	    {% endfor %}
+	  </ul>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  {{ form.color.label }}
+	</td>
+	<td>
+	  {{ form.color }}
+	</td>
+	<td>
+	  <ul>
+	    {% for error in form.color.errors %}
+	    <li>{{ error }}</li>
+	    {% endfor %}
+	  </ul>
+	</td>
+      </tr>
+      <tr>
+	<td colspan="3">
+	  <input type="submit" value="Add To My Collection"/>
+	</td>
+      </tr>
+    </table>
+  </form>
+{% endblock %}

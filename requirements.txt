@@ -1,5 +1,6 @@
 click==6.7
 Flask==1.0.2
+Flask-Admin==1.5.0
 Flask-Login==0.4.1
 Flask-SQLAlchemy==2.3.2
 Flask-WTF==0.14.2
@@ -8,6 +9,6 @@ itsdangerous==0.24
 Jinja2==2.10
 MarkupSafe==1.0
 psycopg2==2.7.4
-SQLAlchemy==1.2.7
+SQLAlchemy==1.2.0b3
 Werkzeug==0.14.1
 WTForms==2.1
