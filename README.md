@@ -19,7 +19,7 @@ Password: _admin_
 
 [Linkki Herokuun](https://tsoha-foutain-pen-store.herokuapp.com/)  
 [Tietokantakavio](/documentation/tietokantakaavio.png)  
-[Käyttötapauset](/documentation/kayttotapaukset.md)  
+[Käyttötapaukset](/documentation/kayttotapaukset.md)  
 
 
 
