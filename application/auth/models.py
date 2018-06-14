@@ -57,9 +57,9 @@ class User(db.Model):
                 if name == value:
                     nro = nro + 1
   
-            S = str(value)
             
-            response.append({"name":S, "nro":nro})    
+            
+            response.append({"name":value, "nro":nro})    
  
 
         return response
