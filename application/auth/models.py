@@ -57,8 +57,9 @@ class User(db.Model):
                 if name == value:
                     nro = nro + 1
   
-            
-            
+            S = str(value)
+            length = len(S)
+            S = S[1:len-3]
             response.append({"name":value, "nro":nro})    
  
 
