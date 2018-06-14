@@ -58,8 +58,7 @@ class User(db.Model):
                     nro = nro + 1
   
             S = str(value)
-            length = len(S)
-            S = S[7:length-3]
+            
             response.append({"name":S, "nro":nro})    
  
 
