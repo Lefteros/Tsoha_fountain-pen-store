@@ -5,9 +5,13 @@
 FountainPenManiac on sivu ihmisille, jotka ovat kiinnostuneet täytekynistä.  
 Sivulle voi rekisteröidä uusia käyttäjiä ja kirjautua olemassa olevilla.  
 Kirjautunut käyttäjä voi lisätä sivulle kyniä. Kynistä tallennetaan mallin nimi, valmistusmaa ja valmistaja.  
-Sivulla voi selata kyniä ja yksittäisiä kyniä voi myös poistaa.  
-Käyttäjä voi luoda ja ylläpitää omaa kynäkokoelmaa sivulla.  
-Sivulla voi myös seurata muiden käyttäjien kokoelman kasvamista.  
+Käyttäjä voi selata kyniä ja yksittäisiä kyniä voi myös poistaa.  
+Lisäksi käyttäjät voivat muokata valmiiksi lisättyjä kyniä, jos huomaa tehneensä virheen.  
+Käyttäjä voi lisätä omaan kokoelmaan kynän. Omassa kokoelmassa näkyy kynän nimi, kärjen koko ja kynän väri.  
+Sivulla voi myös listata muut käyttäjät ja jokaiseen käyttäjään liitetään hänen kokoelmansa koko.  
+Jos on kirjautunut järjestelmänvalvojana (_admin_) pystyy myös poistamaan käyttäjiä. Tavalliselle käytäjälle ei tätä painiketta näytetä.  
+
+
 
 ## Testaus
 
