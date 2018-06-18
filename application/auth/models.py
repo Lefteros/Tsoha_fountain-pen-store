@@ -63,12 +63,18 @@ class User(db.Model):
             for name in count:
                 if name == value:
                     nro = nro + 1
-  
+            
             S = str(value)
             length = len(S)
             S = S[2:length-2]
-            iidee = ids[i]
             
+            iidee = str(ids[i])
+            iidee = iidee.replace("set","")
+            iidee = iidee.replace("([","")
+            iidee = iidee.replace("])","")
+            iidee = iidee.replace("{","")
+            iidee = iidee.replace("}","")
+
             response.append({"name":S, "nro":nro, "id":iidee})
             i += 1    
  
