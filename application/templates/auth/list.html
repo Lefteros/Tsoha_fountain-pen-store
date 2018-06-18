@@ -11,6 +11,10 @@
     <tr>
 	<td>{{user.name}}</td>
 	<td>{{user.nro}}</td>
+        <td>{{user.id}}</td>
+        {% if admin %}
+	<td><form method="POST" action="{{ url_for('auth_delete', user_id = user.id) }}"><button type="submit">Delete</button></form></td>
+	{% endif %}
     </tr>
     {% endfor %}
 </table>

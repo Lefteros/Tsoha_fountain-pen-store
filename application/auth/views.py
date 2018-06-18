@@ -1,5 +1,5 @@
 from flask import render_template, request, redirect, url_for
-from flask_login import login_user, logout_user, login_required
+from flask_login import login_user, logout_user, login_required, current_user
 
 from application import app, db
 from application.auth.models import User
@@ -23,6 +23,7 @@ def auth_login():
     
     login_user(user)
     return redirect(url_for("index"))    
+
 
 @app.route("/auth/logout")
 def auth_logout():
@@ -50,6 +51,20 @@ def auth_create():
 @app.route("/auth/list", methods = ["GET"])
 @login_required
 def auth_list():
-    return render_template("auth/list.html", users=User.get_users_and_pennro())
+    admin = current_user.admin
+    return render_template("auth/list.html", users=User.get_users_and_pennro(), admin = admin)
+
+@app.route("/user/<user_id>", methods=["POST"])
+@login_required
+def auth_delete(user_id):
+    u = User.query.get(user_id)
+
+    db.session().delete(u)
+    db.session().commit()
+
+    return redirect(url_for("auth_list"))
+
+
+
 
 

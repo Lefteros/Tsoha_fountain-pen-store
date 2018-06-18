@@ -1,9 +1,11 @@
 from flask import render_template, request, url_for, redirect
 from flask_login import login_required
+from wtforms import Form
 
 from application import app, db
 from application.pens.models import Pen
 from application.pens.forms import PenForm
+from application.pens.forms import PenEditForm
 
 
 @app.route("/pens/new/")
@@ -49,3 +51,32 @@ def pen_delete(pen_id):
     db.session().commit()
 
     return redirect(url_for("pens_index"))
+
+
+@app.route("/pens/edit", methods=["GET"])
+@login_required
+def pen_editForm():
+    
+    form = PenEditForm()
+    form.edit.choices = [(pen.id,pen.name) for pen in Pen.query.all()]
+    return render_template("pens/edit.html", form = form)
+
+
+
+@app.route("/pens/edit/", methods=["POST"])
+@login_required
+def pen_edit():
+
+    form = PenEditForm(request.form)
+    form.edit.choices = [(pen.id,pen.name) for pen in Pen.query.all()]
+    if not form.validate():
+        return render_template("pens/edit.html", form = form)
+
+    p = Pen.query.get(form.edit.data)
+    p.name = form.name.data
+    p.manufacturer = form.manufacturer.data
+    p.country = form.country.data
+    db.session().commit()
+    return redirect(url_for("pens_index"))
+    
+

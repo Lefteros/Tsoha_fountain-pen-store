@@ -13,6 +13,7 @@ class User(db.Model):
     name = db.Column(db.String(144), nullable=False)
     username = db.Column(db.String(144), nullable=False)
     password = db.Column(db.String(144), nullable=False)
+    admin = db.Column(db.Boolean, nullable=False)
 
     collection = db.relationship("Collection", backref='account', lazy=True)
 
@@ -20,6 +21,7 @@ class User(db.Model):
         self.name = name
         self.username = username
         self.password = password
+        self.admin = False
   
     def get_id(self):
         return self.id
@@ -48,6 +50,11 @@ class User(db.Model):
         names = []
         for row in res2:
             names.append({row[0]})
+        stmt3 = text("SELECT account.id FROM account")
+        res3 = db.engine.execute(stmt3)
+        ids = []
+        for row in res3:
+            ids.append({row[0]})
         
         response = []
         i = 0
@@ -60,7 +67,10 @@ class User(db.Model):
             S = str(value)
             length = len(S)
             S = S[2:length-2]
-            response.append({"name":S, "nro":nro})    
+            iidee = ids[i]
+            
+            response.append({"name":S, "nro":nro, "id":iidee})
+            i += 1    
  
 
         return response
