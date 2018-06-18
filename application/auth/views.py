@@ -59,8 +59,7 @@ def auth_list():
 @login_required
 def auth_delete(user_id):
     u = User.query.get(user_id)
-#    c = Collection.query.filter_by(account_id=user_id).all
-#    db.session().delete(c)
+    c = Collection.query.filter_by(account_id=user_id).delete()
     db.session().delete(u)
     db.session().commit()
 
