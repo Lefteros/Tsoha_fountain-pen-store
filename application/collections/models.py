@@ -12,11 +12,11 @@ class Collection(db.Model):
     nib = db.Column(db.String(144), nullable=False)
     color = db.Column(db.String(144), nullable=False)
     
-    account_id = db.Column(db.Integer, db.ForeignKey('account.id'),
-                           nullable=False)
+    account_id = db.Column(db.Integer, db.ForeignKey('account.id', ondelete='SET NULL'),
+                           nullable=True)
 
-    pen_id = db.Column(db.Integer, db.ForeignKey('pen.id'),
-                           nullable=False)
+    pen_id = db.Column(db.Integer, db.ForeignKey('pen.id', ondelete='SET NULL'),
+                           nullable=True)
 
     def __init__(self, pen_id):
         self.pen_id = pen_id

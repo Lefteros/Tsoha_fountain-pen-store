@@ -5,6 +5,7 @@ from application import app, db
 from application.auth.models import User
 from application.auth.forms import LoginForm
 from application.auth.forms import RegisterForm
+from application.collections.models import Collection
 
 @app.route("/auth/login", methods = ["GET", "POST"])
 def auth_login():
@@ -58,7 +59,8 @@ def auth_list():
 @login_required
 def auth_delete(user_id):
     u = User.query.get(user_id)
-
+#    c = Collection.query.filter_by(account_id=user_id).all
+#    db.session().delete(c)
     db.session().delete(u)
     db.session().commit()
 
