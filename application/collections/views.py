@@ -26,7 +26,7 @@ def collection_add():
     form = CollectionForm(request.form)
     form.pen.choices = [(pen.id,pen.name) for pen in Pen.query.all()]
     if not form.validate():
-        return render_template("collection/list.html", collection = Collection.query.filter_by(account_id=current_user.id).all(), form = form)
+        return render_template("collections/list.html", collection = Collection.query.filter_by(account_id=current_user.id).all(), form = form)
     
     
     c = Collection(form.pen.data)
