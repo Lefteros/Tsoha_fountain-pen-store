@@ -4,6 +4,7 @@ from wtforms import Form
 
 from application import app, db
 from application.pens.models import Pen
+from application.collections.models import Collection
 from application.pens.forms import PenForm
 from application.pens.forms import PenEditForm
 
@@ -46,6 +47,7 @@ def pen_create():
 @login_required
 def pen_delete(pen_id):
     t = Pen.query.get(pen_id)
+    c = Collection.query.filter_by(pen_id=pen_id).delete()
 
     db.session().delete(t)
     db.session().commit()
