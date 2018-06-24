@@ -1,19 +1,19 @@
 {% extends "layout.html" %}
 
 {% block body %}
-    <h1>FountainPenManiac</h1>
-    <p>The only place to post your fountain pen collection!</p>
-    <table>
-	<tr>
-	    <td>
-	        <img src="{{url_for('static', filename='fountainpen.jpeg')}}" style="max-width:50%; max-height:50%;" alt="Fountain Pen">
-	    </td>        
-	</tr>
-	<tr>
-	    <td>	  
-		<span style="font-size: 15px; font-style: italic;"><a href="https://commons.wikimedia.org/wiki/File:Stipula_fountain_pen.jpg">Source</a></span>
-	    </td>	
-	</tr>
-    </table>
+  <h1>FountainPenManiac</h1>
+  <p>The only place to post your fountain pen collection!</p>
+  <table>
+    <tr>
+      <td>
+	<img src="{{url_for('static', filename='fountainpen.jpeg')}}" style="max-width:50%; max-height:50%;" alt="Fountain Pen">
+      </td>        
+    </tr>
+    <tr>
+      <td>	  
+	<span style="font-size: 15px; font-style: italic;"><a href="https://commons.wikimedia.org/wiki/File:Stipula_fountain_pen.jpg">Source</a></span>
+      </td>	
+    </tr>
+  </table>
 {% endblock %}
 
