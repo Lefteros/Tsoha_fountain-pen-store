@@ -6,13 +6,16 @@
     <tr>
 	<th>Name</th>
 	<th>Number of Pens</th>
+        {% if admin %}
+	<th>Settings</th>
+        {% endif %}
     </tr>
     {% for user in users %}
     <tr>
 	<td>{{user.name}}</td>
 	<td>{{user.nro}}</td>
         {% if admin %}
-	<td><form method="POST" action="{{ url_for('auth_delete', user_id = user.id) }}"><button type="submit">Delete</button></form></td>
+	<td><form method="POST" action="{{ url_for('auth_delete', user_id = user.id) }}"><input type="submit" value="Delete" /></form></td>
 	{% endif %}
     </tr>
     {% endfor %}

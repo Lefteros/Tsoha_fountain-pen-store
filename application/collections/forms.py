@@ -10,3 +10,12 @@ class CollectionForm(FlaskForm):
 
     class Meta:
         csrf = False
+
+class CollectionEditForm(FlaskForm):
+    
+    nib = StringField("Nib", [validators.DataRequired(), validators.length(min=1), validators.Length(max=50)])
+    color = StringField("Color", [validators.DataRequired(), validators.length(min=2), validators.Length(max=50)])
+
+    class Meta:
+        csrf = False
+

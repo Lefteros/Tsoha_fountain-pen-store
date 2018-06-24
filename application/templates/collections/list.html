@@ -7,12 +7,15 @@
       <th>Name</th>
       <th>Nib</th>
       <th>Color</th>
+      <th colspan="2">Settings</th>
     </tr>
-    {% for pen in collection %}
+    {% for row in collection %}
     <tr>
-      <td>{{ pen.pen.name }}</td>
-      <td>{{ pen.nib }}</td>
-      <td>{{ pen.color }}</td>
+      <td>{{ row.pen.name }}</td>
+      <td>{{ row.nib }}</td>
+      <td>{{ row.color }}</td>
+      <td><form method="POST" action="{{ url_for('collection_delete', collection_id=row.id) }}"><input type="submit" value="Delete"></form></td>
+      <td><form method="GET" action="{{ url_for('collection_view', collection_id=row.id) }}"><input type="submit" value="View" /></form></td>
     </tr>
     {% endfor %}
   </table>
