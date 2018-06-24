@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <h1>Pen Information</h1>
+  <table border=1>
+    <tr>
+      <th>Name</th>
+      <th>Country of Origin</th>
+      <th>Manufacturer</th>
+      <th>Date Created</th>
+      <th>Date Modified</th>
+    </tr>
+    <tr>
+      <td>{{ pen.name }}</td>
+      <td>{{ pen.country }}</td>
+      <td>{{ pen.manufacturer }}</td>
+      <td>{{ pen.date_created }}</td>
+      <td>{{ pen.date_modified }}</td>
+    </tr> 
+  </table>
+
+{% endblock %}

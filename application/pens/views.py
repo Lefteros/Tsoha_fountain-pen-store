@@ -54,6 +54,13 @@ def pen_delete(pen_id):
 
     return redirect(url_for("pens_index"))
 
+@app.route("/pens/view/<pen_id>", methods=["GET"])
+@login_required
+def pen_view(pen_id):
+    t = Pen.query.get(pen_id)
+    
+    return render_template("pens/view.html", pen = t)
+
 
 @app.route("/pens/edit", methods=["GET"])
 @login_required

@@ -1,18 +1,21 @@
 {% extends "layout.html" %}
 
 {% block body %}
+  <h1>All Pens</h1>
   <table border="1">
     <tr>
       <th>Model</th>
       <th>Country of Origin</th>
       <th>Manufacturer</th>
+      <th colspan="2">Settings</th>
     </tr>
     {% for pen in pen %}
     <tr>
       <td>{{ pen.name }}</td>
       <td>{{ pen.country }}</td>
       <td>{{ pen.manufacturer }}</td>
-      <td><form method="POST" action="{{ url_for('pen_delete', pen_id=pen.id) }}"><button type="submit">Delete</button></form></td>
+      <td><form method="POST" action="{{ url_for('pen_delete', pen_id=pen.id) }}"><input type="submit" value="Delete" /></form></td>
+      <td><form method="GET" action="{{ url_for('pen_view', pen_id=pen.id) }}"> <input type="submit" value="View" /></form></td>
     </tr>
     {% endfor %}
   </table>
