@@ -27,7 +27,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item" style="border-right: solid 1px grey;">
+                <li class="nav-item" style="border-right: solid 1px grey; border-left: solid 1px grey;">
                     <a class="nav-link" href="{{ url_for('collection_index') }} ">My Collection</a>
                 </li>
                 <li class="nav-item" style="border-right: solid 1px grey;">
@@ -60,6 +60,11 @@
         </p>
     {% endblock %}
 
+    <footer style="margin-top: 300px; border-top: dotted 1px grey;">
+      <p style="font-style: italic; color: grey;">Created By: Tuomas Ruuttunen</p>
+      <span style="font-style: italic;"><a href="https://github.com/Lefteros/Tsoha_fountain-pen-store">GitHub Repository</a></span>
+    </footer>
+
     <!-- JavaScript -->
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -68,3 +73,5 @@
 
   </body>
 </html>
+
+
