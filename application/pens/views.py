@@ -58,34 +58,36 @@ def pen_delete(pen_id):
 @login_required
 def pen_view(pen_id):
     t = Pen.query.get(pen_id)
-    
-    return render_template("pens/view.html", pen = t)
+    form = PenForm()
+    form.name.data = t.name
+    form.country.data = t.country
+    form.manufacturer.data = t.manufacturer
+    return render_template("pens/view.html", pen = t, form = form)
 
 
-@app.route("/pens/edit", methods=["GET"])
+#@app.route("/pens/edit", methods=["GET"])
+#@login_required
+#def pen_editForm():
+#    
+#    form = PenEditForm()
+#    form.edit.choices = [(pen.id,pen.name) for pen in Pen.query.all()]
+#    return render_template("pens/edit.html", form = form)
+
+
+
+@app.route("/pens/edit/<pen_id>/", methods=["POST"])
 @login_required
-def pen_editForm():
-    
-    form = PenEditForm()
-    form.edit.choices = [(pen.id,pen.name) for pen in Pen.query.all()]
-    return render_template("pens/edit.html", form = form)
+def pen_edit(pen_id):
 
-
-
-@app.route("/pens/edit/", methods=["POST"])
-@login_required
-def pen_edit():
-
-    form = PenEditForm(request.form)
-    form.edit.choices = [(pen.id,pen.name) for pen in Pen.query.all()]
+    form = PenForm(request.form)
+    p = Pen.query.get(pen_id)
     if not form.validate():
-        return render_template("pens/edit.html", form = form)
+        return render_template("pens/view.html", form = form, pen = p)
 
-    p = Pen.query.get(form.edit.data)
     p.name = form.name.data
     p.manufacturer = form.manufacturer.data
     p.country = form.country.data
     db.session().commit()
-    return redirect(url_for("pens_index"))
+    return redirect(url_for("pen_view", pen_id = pen_id))
     
 
