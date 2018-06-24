@@ -75,6 +75,9 @@ def auth_list():
 def auth_delete(user_id):
 
     u = User.query.get(user_id)
+
+    # Poistetaan myös kaikki käyttäjään liittyvät kokoelma rivit, jottei tietokannan eheys särjy.
+
     c = Collection.query.filter_by(account_id=user_id).delete()
 
     db.session().delete(u)

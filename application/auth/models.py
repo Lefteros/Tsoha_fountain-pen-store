@@ -35,8 +35,12 @@ class User(db.Model):
     def is_authenticated(self):
         return True
 
+
     @staticmethod
     def get_users_and_pennro():
+
+        # Ensimmäien kysely tuottaa listan nimistä jossa jokainen nimi esiintyy niin monta kertaa,
+        # kuin käyttäjällä on kyniä kokoelmassaan.
 
         stmt1 = text("SELECT account.name FROM account, collection"
                     " WHERE account.id = collection.account_id")
@@ -45,17 +49,26 @@ class User(db.Model):
         for row in res1:
             count.append({row[0]})
 
+        # Toine kysely palauttaa listan kaikista käyttäjien nimistä
+
         stmt2 = text("SELECT account.name FROM account")
         res2 = db.engine.execute(stmt2)
         names = []
         for row in res2:
             names.append({row[0]})
+
+        # Kolmas kysely palauttaa listan käyttäjien id:istä
+
         stmt3 = text("SELECT account.id FROM account")
         res3 = db.engine.execute(stmt3)
         ids = []
         for row in res3:
             ids.append({row[0]})
-        
+
+        # Lasketaan kuinka monta kertaa kukin nimi esiintyy ensimmäisessä kyselyssä,
+        # eli saadaan selville kuinka monta kynää kullakin on.
+        # Liitetään palautettavaan listaan jokaiselle riville käyttäjän nimi, kynien lukumäärä ja käyttäjien id
+
         response = []
         i = 0
         for value in names:
@@ -63,11 +76,17 @@ class User(db.Model):
             for name in count:
                 if name == value:
                     nro = nro + 1
-            
+
+            # Riisutaan nimen alusta ja lopusta turhat merkit. Näin se näyttää oikealta PostgreSQL käytettäessä.
+            # Jos käytössä on jokin toinen tietokantajärjestelmä, kannattaa tätä osaa muokata.
+
             S = str(value)
             length = len(S)
             S = S[2:length-2]
-            
+
+            # Poistetaan id:stä ylimääräiset merkit jotka tulevat kyselyntuloksena.
+            # Koska id on aina kokonaisluku, ei ole vaaraa oleellisen merkin poistamisesta.
+
             iidee = str(ids[i])
             iidee = iidee.replace("set","")
             iidee = iidee.replace("([","")
@@ -80,3 +99,5 @@ class User(db.Model):
  
 
         return response
+
+

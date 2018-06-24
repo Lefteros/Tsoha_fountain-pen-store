@@ -18,6 +18,10 @@ from application.pens.models import Pen
 def collection_index():
 
     form = CollectionForm()
+
+    # WTFormsin select field ei ole paras mahdollinen dynaamisen valinan kanssa,
+    # joten vaihtoehdot lisätään vasta metodia kutsuttaessa eikä jo lomakkeessa.
+
     form.pen.choices = [(pen.id,pen.name) for pen in Pen.query.all()]
 
     return render_template("collections/list.html", collection = Collection.query.filter_by(account_id=current_user.id).all(), form = form)
@@ -28,6 +32,10 @@ def collection_index():
 def collection_add():
 
     form = CollectionForm(request.form)
+
+    # WTFormsin select field ei ole paras mahdollinen dynaamisen valinan kanssa,
+    # joten vaihtoehdot lisätään vasta metodia kutsuttaessa eikä jo lomakkeessa.
+
     form.pen.choices = [(pen.id,pen.name) for pen in Pen.query.all()]
 
     if not form.validate():

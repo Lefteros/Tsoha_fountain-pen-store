@@ -23,7 +23,9 @@ Password: _admin_
 
 ## Linkit
 
-[Linkki Herokuun](https://tsoha-foutain-pen-store.herokuapp.com/)  
-[Tietokantakavio](/documentation/tietokantakaavio.png)  
-[Käyttötapaukset](/documentation/kayttotapaukset.md)  
-[Asennus ja käyttöohje](/documentation/ohjeet.md)
+* [Linkki Herokuun](https://tsoha-foutain-pen-store.herokuapp.com/)  
+* [Tietokantakavio](/documentation/tietokantakaavio.png)  
+* [CREATE TABLE- lauseet](/documentation(tietokantataulut.md)  
+* [Käyttötapaukset](/documentation/kayttotapaukset.md)  
+* [Asennus ja käyttöohje](/documentation/ohjeet.md)
+

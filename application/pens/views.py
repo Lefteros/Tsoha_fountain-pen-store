@@ -49,6 +49,9 @@ def pen_create():
 def pen_delete(pen_id):
 
     t = Pen.query.get(pen_id)
+
+    # Poistetaan kokoelma-taulusta kaikki poistettavaan kynään viittaavat rivit, jotta tietokannan eheys säilyy.
+
     c = Collection.query.filter_by(pen_id=pen_id).delete()
 
     db.session().delete(t)
