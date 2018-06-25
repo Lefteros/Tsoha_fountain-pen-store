@@ -19,7 +19,7 @@ Kun olet kirjautunut, pääset käyttämään vapaasti sivun kaikkia toimintoja 
 Navigointi-palkin linkint ovat vasemmalta oikealle seuraavat: "My Collection", "All Fountain Pens", "Add New" ja "Users".  
   
 _HUOM:_ Sovelluksessa on tarkoitus käyttää järjestelmänvalvojana ainoastaan ennalta luotua admin- käyttäjää.  
-Jos kuitenkin tahdot luoda uuden järjestelmän valvojan tai muuttaa olemassa olevan adminin tunnuksia (mikä saattaa olla hyväkin idea),  
+Jos kuitenkin tahdot luoda uuden järjestelmän valvojan tai muuttaa olemassa olevan adminin tunnuksia (mikä saattaa olla hyväkin idea), 
 tulee tämä tehdä suoraan tietokantaan. Eli avaa application kansiossa oleva pens.db tiedosto esim. SQLite:llä ja luo uusi järjestelmän valvoja INSERT INTO lauseella.  
 
 ### My Collection  
