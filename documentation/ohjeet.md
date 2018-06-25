@@ -17,6 +17,10 @@ Jos haluat täydet oikeudet sivule, kirjaudu järjestelmänvalvojana. Tämä onn
 Jos haluat luoda oman käyttäjän, onnistuu se rekisteröintisivulta. Rekisteröityäsi uuden käyttäjän tulee sinun vielä kirjautua.  
 Kun olet kirjautunut, pääset käyttämään vapaasti sivun kaikkia toimintoja (muiden käyttäjien poistaminen on varattu järjestelmänvalvojalle).  
 Navigointi-palkin linkint ovat vasemmalta oikealle seuraavat: "My Collection", "All Fountain Pens", "Add New" ja "Users".  
+  
+_HUOM:_ Sovelluksessa on tarkoitus käyttää järjestelmänvalvojana ainoastaan ennalta luotua admin- käyttäjää.  
+Jos kuitenkin tahdot luoda uuden järjestelmän valvojan tai muuttaa olemassa olevan adminin tunnuksia (mikä saattaa olla hyväkin idea),  
+tulee tämä tehdä suoraan tietokantaan. Eli avaa application kansiossa oleva pens.db tiedosto esim. SQLite:llä ja luo uusi järjestelmän valvoja INSERT INTO lauseella.  
 
 ### My Collection  
 
@@ -45,6 +49,7 @@ Kynän luomisen ajankohta tallentuu automaattisesti, joten siitä ei tarvitse hu
 Users- painike voi näyttää kaksi erilaista näkymää. Jos olet kirjautuneena tavallisella käyttäjänä, näkyy sivulla taulukko jossa on jokaisen käyttäjän nimi ja heidän kokoelmansa koko.  
 Jos taas olet kirjautunut järjestelmänvalvojana (_admin_), näet lisäksi jokaiselle rivillä Delete- painikkeen. Tämä painike poistaa kyseisen käyttäjän sivulta. 
 Tämän jälkeen käyttäjällä ei luonnollisesti voida enää kirjautua.  
+  
 _HUOM:_ Taulukon Name- sarakkeiden arvot saattavat näyttää erikoisilta. Tämä johtuu eri tietokantojen välisestä erosta. Herokun käyttämää PostgreSQL:ää käyttämällää nimet tulevat oikein näkyviin, mutta
 joidenkin tietokantojen kanssa kenttään saattaa livahtaa ylimääräisiä merkkejä.  
 
